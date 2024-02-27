@@ -5,12 +5,10 @@ import {
 } from "react-icons/ai";
 import { CiCircleRemove } from "react-icons/ci";
 
-import { urlFor } from "../lib/client";
 import { useDispatch, useSelector } from "react-redux";
 
 import { showCartFtn, removeItem } from "../store/productSlice";
 import { Link } from "react-router-dom";
-// import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 export default function Cart() {
   const cartRef = useRef();
@@ -19,51 +17,6 @@ export default function Cart() {
   );
 
   const dispatch = useDispatch();
-
-  // const initialOptions = {
-  //   clientId: "AbgU3Xu7DwylwPgcFlHOQByJQN_FvIdWIExYZs8gBxJvUCyylZOl_HbI5EpC3VeYDGWffaer1YcevGSA",
-  //   // currency: "NGN",
-  //   // intent: "capture"
-  // };
-
-//   async function createOrder() {
-//     const data = await fetch("/my-server/create-paypal-order", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         // use the "body" param to optionally pass additional order information
-//         // like product ids and quantities
-//         body: JSON.stringify({
-//             cart: [
-//                 {
-//                     id: "YOUR_PRODUCT_ID",
-//                     quantity: "YOUR_PRODUCT_QUANTITY",
-//                 },
-//             ],
-//         }),
-//     })
-
-//     const res = await data.json()
-//     console.log(res, "res")
-//         // .then((response) => response.json())
-//         // .then((order) => order.id);
-// }
-
-// async function onApprove(data) {
-//       const dat = await fetch("/my-server/capture-paypal-order", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({
-//           orderID: data.orderID
-//         })
-//       })
-//       const res = await dat.json()
-//       console.log(res,"rere")
-
-//     }
 
 
   return (
@@ -85,7 +38,7 @@ export default function Cart() {
                 return (
                   <div className="product" key={item._id}>
                     <img
-                      src={urlFor(item?.image[0]).url()}
+                      src={item?.image[0]}
                       className="cart-product-image"
                     />
                     <div className="item-desc">

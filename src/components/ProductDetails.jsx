@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-
 import { useDispatch, useSelector } from "react-redux";
 import { decQty, incQty, onAdd } from "../store/productSlice";
+
+import { sanityData } from "../data";
 
 import {
   AiOutlineMinus,
@@ -11,7 +11,7 @@ import {
   AiOutlineStar
 } from "react-icons/ai";
 
-import { getOnlyProduct, urlFor } from "../lib/client";
+
 import Product from "./Product";
 import { useState } from "react";
 
@@ -22,30 +22,19 @@ function ProductDetails() {
   const dispatch =  useDispatch()
 
   const [index, setIndex] = useState(0)
+  const [data, setData] = useState(sanityData[0])
   const params = useParams();
 
   const { productId } = params;
+  console.log(productId,"productId")
 
 
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["product"],
-    queryFn: getOnlyProduct
-  });
-
-  // console.log(data?.result, "data");
+  console.log(data?.result, "data");
 
   const details = data?.result.find(
     (current) => current.slug.current === productId
   );
-  // console.log(details, "good");
-
-  if (isLoading) {
-    return <p>Loading, please wait ....</p>;
-  }
-
-  if (error) {
-    return <p>The is an error: {error.message}</p>;
-  }
+  console.log(details, "good");
 
   return (
     <div>
@@ -53,13 +42,13 @@ function ProductDetails() {
         <div>
           <div className="image-container">
           <img
-              src={urlFor(details && details.image && details.image[index]).url()} className="product-detail-image"
+              src={details.image[index]} className="product-detail-image"
             />
           </div>
 
           <div className="small-images-container">
           {details.image?.map((item, i)=>(
-              <img src={urlFor(item)} key={i} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=> setIndex(i)} />
+              <img src={item} key={i} className={i === index ? "small-image selected-image" : "small-image"} onMouseEnter={()=> setIndex(i)} />
             ))}
           </div>
 
