@@ -1,38 +1,31 @@
-// import React from 'react'
-
-import { urlFor } from "../lib/client"
-
-function FooterBanner({footerBanner}) {
-    // console.log(footerBanner, "props");
-
+function FooterBanner({ footerBanner }) {
+  console.log(footerBanner[0], "footer");
+  const footBanner = footerBanner[0];
 
   return (
-	<div className="footer-banner-container">
-    <div className="banner-desc">
-      <div className="left">
-        <p>{footerBanner.discount}</p>
-        <p>{footerBanner.discount}</p>
-        <h3>{footerBanner.largeText1}</h3>
-        <h3>{footerBanner.largeText2}</h3>
-        <p>{footerBanner.saleTime}</p>
+    <div className="footer-banner-container">
+      <div className="banner-desc">
+        <div className="left">
+          <p>{footBanner.discount}</p>
+          <h3>{footBanner.largeText1}</h3>
+          <h3>{footBanner.largeText2}</h3>
+          <p>{footBanner.saleTime}</p>
+        </div>
+        <div className="right">
+          <p>{footBanner.smallText}</p>
+          <h3>{footBanner.midText}</h3>
+          <p>{footBanner.desc}</p>
+          <a href={`/product/${footBanner.product}`}>
+            <button type="button">{footBanner.buttonText}</button>
+          </a>
+        </div>
 
+        <div className="head">
+          <img src={footBanner.image} className="footer-banner-image head" />
+        </div>
       </div>
-      <div className="right">
-        <p>{footerBanner.smallText}</p>
-        <h3>{footerBanner.midText}</h3>
-        <p>{footerBanner.desc}</p>
-        <a href={`/product/${footerBanner.product}`}>
-          <button type="button">{footerBanner.buttonText}</button>
-        </a>
-      </div>
-
-      <img src={
-            footerBanner?.image?.asset?._ref &&
-            urlFor(footerBanner.image.asset._ref).url()
-          } className="footer-banner-image" />
     </div>
-  </div>
-  )
+  );
 }
 
-export default FooterBanner
+export default FooterBanner;

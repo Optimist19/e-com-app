@@ -2,7 +2,7 @@
 
 // import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { urlFor } from "../lib/client";
+// import { urlFor } from "../lib/client";
 
 function HeroBanner({ heroBanner }) {
   console.log(heroBanner, "props");
@@ -18,10 +18,7 @@ function HeroBanner({ heroBanner }) {
           <h1>{detail.largeText1}</h1>
           {/* <img src={urlFor(heroBanner.image.asset._ref).url()} alt="headphones" className="hero-banner-image" />  */}
           <img
-            src={
-              detail?.image?.asset?._ref &&
-              urlFor(detail.image.asset._ref).url()
-            }
+            src={detail.image}
             alt="headphones"
             className="hero-banner-image"
           />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HeroBanner from "./HeroBanner";
 import FooterBanner from "./FooterBanner";
 import Product from "./Product";
@@ -6,12 +6,12 @@ import { sanityData } from "../data";
 
 function SmallLayout() {
   const [arr, setArr] = useState(sanityData)
-  const [data, setData] = useState({
-    products: "",
-    bannerData: ""
-  });
+  // const [data, setData] = useState({
+  //   products: "",
+  //   bannerData: ""
+  // });
 
-  // console.log(newArray);
+  console.log(arr);
 
 
   return (
@@ -31,12 +31,7 @@ function SmallLayout() {
           })}
       </div>
       <FooterBanner
-        footerBanner={
-          data &&
-          data.bannerData &&
-          data.bannerData.result &&
-          data.bannerData.result[0]
-        }
+        footerBanner={arr[1].result}
       />
     </div>
   );

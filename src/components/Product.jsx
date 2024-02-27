@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { urlFor } from "../lib/client";
 
 function Product({ product }) {
-  // console.log(product)
+  console.log(product)
   return (
     <div>
       <Link to={`/product/${product.slug.current}`}>
         <div className="product-card">
           <img
-            src={urlFor(product && product.image[0]).url()}
+            src={product.image[1]}
             alt=""
             className="product-image"
             width={250}
