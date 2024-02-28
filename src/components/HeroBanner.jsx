@@ -1,8 +1,4 @@
-// import React from 'react'
-
-// import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import { urlFor } from "../lib/client";
 
 function HeroBanner({ heroBanner }) {
   console.log(heroBanner, "props");

@@ -1,7 +1,4 @@
-// import React from 'react'
-
 import { Link } from "react-router-dom";
-import { urlFor } from "../lib/client";
 
 function Product({ product }) {
   console.log(product)

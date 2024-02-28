@@ -202,9 +202,15 @@ span.text-red {
   align-items: center;
   justify-content: space-between;
 }
-.foot-con .p-h3{
+.foot-con .p-h3 {
   color: white;
-  font-size: 4em;
+}
+.foot-con .p-h3 p{
+  font-size: 2em;
+}
+
+.foot-con .p-h3 h3{
+  font-size: 3.4em;
 }
 .foot-con .p-link p{
   
@@ -658,9 +664,7 @@ span.text-red {
 }
 
 @media screen and (max-width: 1000px) {
-  .foot-con .p-h3{
-    font-size: 3em;
-  }
+
   .foot-con .p-link p{
     font-size: 1.5rem;
   }
@@ -692,6 +696,21 @@ span.text-red {
     font-size: 2rem;
   }
 
+
+  .foot-con .p-h3 p{
+    font-size: 1.5em;
+  }
+
+  .foot-con .p-h3 h3{
+    font-size: 2em;
+  }
+
+  .foot-con .p-link p{
+    font-size: 1.5rem;
+  }
+  .foot-con .p-link h3{
+    font-size: 2rem;
+  }
   
   .hero-banner-container {
     height: 560px;
@@ -834,10 +853,24 @@ span.text-red {
   }
 }
 
-  @media screen and (max-width: 800px) {
-    .foot-con-small{
-      display: block;
+  @media screen and (max-width: 555px) {
+    .foot-con-small .p-h3{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+    }
+
+    .foot-con-small{
+      display: flex;
+      flex-direction: column;
     } 
+    
+    .foot-con-small .p-link{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }

@@ -6,10 +6,7 @@ import { sanityData } from "../data";
 
 function SmallLayout() {
   const [arr, setArr] = useState(sanityData)
-  // const [data, setData] = useState({
-  //   products: "",
-  //   bannerData: ""
-  // });
+
 
   console.log(arr);
 

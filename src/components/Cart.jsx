@@ -89,11 +89,8 @@ export default function Cart() {
             </div>
             <div className="btn-container">
               <button type="button" className="btn">
-                Pay with Stripe
+                Pay with your Card
               </button>
-              {/* <PayPalScriptProvider options={initialOptions}>
-                <PayPalButtons style={{layout: 'vertical'}} createOrde ={createOrder} onApprove={onApprove} />
-              </PayPalScriptProvider> */}
             </div>
           </div>
         )}
